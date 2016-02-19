@@ -1,0 +1,17 @@
+{
+	"name": "Twitter Stripper",
+	"version": "0.0.1",
+	"manifest_version": 2,
+	"description": "Removes annoying sidebar boxes",
+	"browser_action": {
+		"default_icon": "icon.png",
+		"default_popup": "menu.html"
+	},
+	"content_scripts": [{
+        "matches": ["http://twitter.com/*", "https://twitter.com/*"],
+        "js": ["content.js"]
+    }],
+	"permissions": [
+        "activeTab"
+    ]
+}
