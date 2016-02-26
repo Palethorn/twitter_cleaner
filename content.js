@@ -1,5 +1,4 @@
 function removeBoxes(mutations) {
-    console.log("Cleanup");
     var wtf = document.querySelector('.dashboard-left');
     if(wtf != null && wtf != undefined) {
         wtf.style.display = 'none';
