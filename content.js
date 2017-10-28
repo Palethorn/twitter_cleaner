@@ -1,6 +1,6 @@
 var dl = dr = wtf = t = f = dpc = true;
 var citu = false;
-var ca = 'none';
+var ca = 'center';
 var tz = 0;
 
 function removeBoxes(mutations) {
@@ -71,7 +71,7 @@ function restoreOptions() {
     chrome.storage.local.get({
         dl: true,
         dr: true,
-        ca: "none",
+        ca: "center",
         t: true,
         wtf: true,
         f: true,

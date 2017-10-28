@@ -1,13 +1,13 @@
 {
 	"name": "Twitter Cleaner",
-	"version": "0.0.2",
+	"version": "1.0.1",
 	"manifest_version": 2,
 	"description": "Removes annoying twitter sidebar boxes",
 	"icons":{
-		"512": "512x512.png"
+		"128": "icon128.png"
 	},
 	"browser_action": {
-		"default_icon": "icon-strip.png",
+		"default_icon": "icon128.png",
 		"default_popup": "menu.html"
 	},
 	"content_scripts": [{
