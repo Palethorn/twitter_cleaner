@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="options.css"></link>
+</head>
+<body>
+    What to remove?
+    <ul>
+        <li><input type="checkbox" id="dashboard-left"></input><label for="dashboard-left">Right Dashboard (includes Profile Card and Trending)</label></li>
+        <li><input type="checkbox" id="dashboard-right"></input><label for="dashboard-right">Left Dashboard (includes Who To Follow and Footer)</label></li>
+        <li><input type="checkbox" id="dashboard-profile-card"></input><label for="dashboard-profile-card">Profile Card</label></li>
+        <li><input type="checkbox" id="who-to-follow"></input><label for="who-to-follow">Who To Follow</label></li>
+        <li><input type="checkbox" id="trending"></input><label for="trending">Trending</label></li>
+        <li><input type="checkbox" id="footer"></input><label for="footer">Footer</label></li>
+        <li>
+            <label for="content-align">Timeline alignment</label>
+            <select id="content-align">
+                <option value="none"></option>
+                <option value="center">Center</option>
+                <option value="left">Left</option>
+                <option value="right">Right</option>
+            </select>
+        </li>
+        <li>
+            <label for="timeline-zoom">Timeline zoom: </label><span id="timeline-zoom-value"></span>
+            <div><input type="range" id="timeline-zoom" min="0" value="0" max="1" step=".1"></div>
+        </li>
+        <li><input type="checkbox" id="convert-images-to-urls"></input><label for="convert-images-to-urls">Convert Images To URLs (experimental)</label></li>
+    </ul>
+    <button id="save-options-btn">Save</button><span id="status"></span>
+</body>
+<script type="text/javascript" src="options.js"></script>
+</html>
