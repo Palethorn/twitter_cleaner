@@ -46,7 +46,7 @@ function restoreOptions() {
         document.getElementById('dashboard-profile-card').checked = items.dpc;
         document.querySelector('#timeline-zoom').value = items.tz;
         document.querySelector('#timeline-zoom-value').innerText = (items.tz * 100) + '%';
-        document.querySelector('#convert-images-to-urls').checked = citu;
+        document.querySelector('#convert-images-to-urls').checked = items.citu;
     });
 }
 
