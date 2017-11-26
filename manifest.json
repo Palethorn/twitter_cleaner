@@ -2,6 +2,11 @@
 	"name": "Twitter Cleaner",
 	"version": "1.1.1",
 	"manifest_version": 2,
+    "applications": {
+        "gecko": {
+            "id": "twitter-cleaner@cavar.net"
+        }
+    },
 	"description": "Removes annoying twitter sidebar boxes",
 	"icons":{
 		"128": "icon128.png"

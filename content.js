@@ -61,7 +61,13 @@ function removeBoxes(mutations) {
 
             media_containers[i].innerHTML = '';
             for(var j = 0; j < images.length; j++) {
-                media_containers[i].innerHTML += '<div style="padding-top: 5px"><a href="' + images[j].src + '" target="_blank">' + images[j].src + '</a></div>';
+                var div = document.createElement('div');
+                div.style.paddingTop = '5px';
+                var a = document.createElement('a');
+                a.href = images[j].src;
+                a.target = "_blank";
+                div.appendChild(a);
+                media_containers[i].appendChild(div);
             }
         }
     }
