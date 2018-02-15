@@ -8,6 +8,7 @@ function saveOptions() {
     var dashboard_profile_card = document.getElementById('dashboard-profile-card').checked;
     var timeline_zoom = document.querySelector('#timeline-zoom').value;
     var convert_images_to_urls = document.querySelector('#convert-images-to-urls').checked;
+    var remove_suggestions = document.querySelector('#remove-suggestions').checked;
 
     chrome.storage.local.set({
         dl: dashboard_left,
@@ -18,7 +19,8 @@ function saveOptions() {
         f: footer,
         dpc: dashboard_profile_card,
         tz: timeline_zoom,
-        citu: convert_images_to_urls
+        citu: convert_images_to_urls,
+        remove_suggestions: remove_suggestions
     }, function() {
         var status = document.getElementById('status');
         status.innerText = 'Saved.';
@@ -35,8 +37,10 @@ function restoreOptions() {
         f: true,
         dpc: true,
         tz: 0,
-        citu: false
+        citu: false,
+        remove_suggestions: false
     }, function(items) {
+        console.log(items);
         document.getElementById('dashboard-left').checked = items.dl;
         document.getElementById('content-align').value = items.ca;
         document.getElementById('dashboard-right').checked = items.dr;
@@ -47,6 +51,7 @@ function restoreOptions() {
         document.querySelector('#timeline-zoom').value = items.tz;
         document.querySelector('#timeline-zoom-value').innerText = (items.tz * 100) + '%';
         document.querySelector('#convert-images-to-urls').checked = items.citu;
+        document.querySelector('#remove-suggestions').checked = items.remove_suggestions;
     });
 }
 

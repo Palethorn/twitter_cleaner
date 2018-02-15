@@ -1,15 +1,17 @@
 var dl = dr = wtf = t = f = dpc = true;
-var citu = false;
+var citu = remove_suggestions = false;
 var ca = 'center';
 var tz = 0;
 
 function removeBoxes(mutations) {
     var element = document.querySelector('.dashboard-left');
+
     if(element != null && element != undefined && dl === true) {
         element.style.display = 'none';
     }
 
     var element = document.querySelector('.dashboard-right');
+
     if(element != null && element != undefined && dr === true) {
         element.style.display = 'none';
     }
@@ -30,21 +32,25 @@ function removeBoxes(mutations) {
     }
 
     var element = document.querySelector('.wtf-module');
+
     if(element != null && element != undefined && wtf === true) {
         element.style.display = 'none';
     }
 
     var element = document.querySelector('.Trends');
+
     if(element != null && element != undefined && t === true) {
         element.style.display = 'none';
     }
 
     var element = document.querySelector('.Footer');
+
     if(element != null && element != undefined && f === true) {
         element.style.display = 'none';
     }
 
     var element = document.querySelector('.DashboardProfileCard');
+
     if(element != null && element != undefined && dpc === true) {
         element.style.display = 'none';
     }
@@ -60,6 +66,7 @@ function removeBoxes(mutations) {
             }
 
             media_containers[i].innerHTML = '';
+
             for(var j = 0; j < images.length; j++) {
                 var div = document.createElement('div');
                 div.style.paddingTop = '5px';
@@ -69,6 +76,17 @@ function removeBoxes(mutations) {
                 div.appendChild(a);
                 media_containers[i].appendChild(div);
             }
+        }
+    }
+
+
+    if(remove_suggestions == true) {
+        var suggestions = document.querySelectorAll('[data-component-context=suggest_activity_tweet]');
+        console.log(suggestions);
+        for(var i = 0; i < suggestions.length; i++) {
+            var li = suggestions[i].parentNode;
+            var parent = li.parentNode;
+            parent.removeChild(li);
         }
     }
 }
@@ -83,7 +101,8 @@ function restoreOptions() {
         f: true,
         dpc: true,
         tz: 0,
-        citu: false
+        citu: false,
+        remove_suggestions: false
     }, function(items) {
         dl = items.dl;
         dr = items.dr;
@@ -94,6 +113,7 @@ function restoreOptions() {
         dpc = items.dpc;
         tz = items.tz;
         citu = items.citu;
+        remove_suggestions = items.remove_suggestions;
     });
 }
 
