@@ -1,5 +1,6 @@
 var dl = dr = wtf = t = f = dpc = true;
 var citu = remove_suggestions = false;
+var pt = false;
 var ca = 'center';
 var tz = 0;
 
@@ -82,11 +83,20 @@ function removeBoxes(mutations) {
 
     if(remove_suggestions == true) {
         var suggestions = document.querySelectorAll('[data-component-context=suggest_activity_tweet]');
-        console.log(suggestions);
+        
         for(var i = 0; i < suggestions.length; i++) {
             var li = suggestions[i].parentNode;
             var parent = li.parentNode;
             parent.removeChild(li);
+        }
+    }
+
+    if(pt == true) {
+        var promoted_tweets = document.querySelectorAll('.promoted-tweet');
+
+        for(var i = 0; i < promoted_tweets.length; i++) {
+            var li = promoted_tweets[i].parentNode;
+            li.parentNode.removeChild(li);
         }
     }
 }
@@ -102,7 +112,8 @@ function restoreOptions() {
         dpc: true,
         tz: 0,
         citu: false,
-        remove_suggestions: false
+        remove_suggestions: false,
+        pt: false
     }, function(items) {
         dl = items.dl;
         dr = items.dr;
@@ -114,6 +125,7 @@ function restoreOptions() {
         tz = items.tz;
         citu = items.citu;
         remove_suggestions = items.remove_suggestions;
+        pt = items.pt;
     });
 }
 

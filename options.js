@@ -9,6 +9,7 @@ function saveOptions() {
     var timeline_zoom = document.querySelector('#timeline-zoom').value;
     var convert_images_to_urls = document.querySelector('#convert-images-to-urls').checked;
     var remove_suggestions = document.querySelector('#remove-suggestions').checked;
+    var remove_promoted_tweets = document.querySelector('#remove-promoted-tweets').checked;
 
     chrome.storage.local.set({
         dl: dashboard_left,
@@ -20,7 +21,8 @@ function saveOptions() {
         dpc: dashboard_profile_card,
         tz: timeline_zoom,
         citu: convert_images_to_urls,
-        remove_suggestions: remove_suggestions
+        remove_suggestions: remove_suggestions,
+        pt: remove_promoted_tweets
     }, function() {
         var status = document.getElementById('status');
         status.innerText = 'Saved.';
@@ -38,7 +40,8 @@ function restoreOptions() {
         dpc: true,
         tz: 0,
         citu: false,
-        remove_suggestions: false
+        remove_suggestions: false,
+        pt: false
     }, function(items) {
         console.log(items);
         document.getElementById('dashboard-left').checked = items.dl;
@@ -52,6 +55,7 @@ function restoreOptions() {
         document.querySelector('#timeline-zoom-value').innerText = (items.tz * 100) + '%';
         document.querySelector('#convert-images-to-urls').checked = items.citu;
         document.querySelector('#remove-suggestions').checked = items.remove_suggestions;
+        document.querySelector('#remove-promoted-tweets').checked = items.pt;
     });
 }
 
