@@ -1,3 +1,4 @@
+var enabled = true;
 var dl = dr = wtf = t = f = dpc = true;
 var citu = remove_suggestions = pt = dismissible = recap = false;
 var ca = 'center';
@@ -116,6 +117,19 @@ function removeBoxes(mutations) {
     }
 }
 
+function observe() {
+    var observer = new MutationObserver(removeBoxes);
+    var config = { attributes: false, childList: true, characterData: false, subtree: true};
+    target = document.querySelector('body');
+
+    if(target != null) {
+        observer.observe(target, config);
+    }
+
+    console.log('Observer attached');
+}
+
+
 function restoreOptions() {
     chrome.storage.local.get({
         dl: true,
@@ -130,7 +144,8 @@ function restoreOptions() {
         remove_suggestions: false,
         pt: false,
         dismissible: false,
-        recap: false
+        recap: false,
+        enabled: true
     }, function(items) {
         dl = items.dl;
         dr = items.dr;
@@ -145,14 +160,12 @@ function restoreOptions() {
         pt = items.pt;
         dismissible = items.dismissible;
         recap = items.recap;
+        enabled = items.enabled;
+
+        if(enabled) {
+            observe();
+        }
     });
 }
 
 restoreOptions();
-var observer = new MutationObserver(removeBoxes);
-var config = { attributes: false, childList: true, characterData: false, subtree: true};
-target = document.querySelector('body');
-
-if(target != null) {
-    observer.observe(target, config);
-}
