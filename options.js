@@ -10,6 +10,8 @@ function saveOptions() {
     var convert_images_to_urls = document.querySelector('#convert-images-to-urls').checked;
     var remove_suggestions = document.querySelector('#remove-suggestions').checked;
     var remove_promoted_tweets = document.querySelector('#remove-promoted-tweets').checked;
+    var remove_dismissible_boxes = document.querySelector('#remove-dismissible-boxes').checked;
+    var remove_recap_boxes = document.querySelector('#remove-recap-boxes').checked;
 
     chrome.storage.local.set({
         dl: dashboard_left,
@@ -22,7 +24,9 @@ function saveOptions() {
         tz: timeline_zoom,
         citu: convert_images_to_urls,
         remove_suggestions: remove_suggestions,
-        pt: remove_promoted_tweets
+        pt: remove_promoted_tweets,
+        dismissible: remove_dismissible_boxes,
+        recap: remove_recap_boxes
     }, function() {
         var status = document.getElementById('status');
         status.innerText = 'Saved.';
@@ -41,9 +45,10 @@ function restoreOptions() {
         tz: 0,
         citu: false,
         remove_suggestions: false,
-        pt: false
+        pt: false,
+        dismissible: false,
+        recap: false
     }, function(items) {
-        console.log(items);
         document.getElementById('dashboard-left').checked = items.dl;
         document.getElementById('content-align').value = items.ca;
         document.getElementById('dashboard-right').checked = items.dr;
@@ -56,6 +61,8 @@ function restoreOptions() {
         document.querySelector('#convert-images-to-urls').checked = items.citu;
         document.querySelector('#remove-suggestions').checked = items.remove_suggestions;
         document.querySelector('#remove-promoted-tweets').checked = items.pt;
+        document.querySelector('#remove-dismissible-boxes').checked = items.dismissible;
+        document.querySelector('#remove-recap-boxes').checked = items.recap;
     });
 }
 

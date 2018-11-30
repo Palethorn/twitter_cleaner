@@ -1,6 +1,5 @@
 var dl = dr = wtf = t = f = dpc = true;
-var citu = remove_suggestions = false;
-var pt = false;
+var citu = remove_suggestions = pt = dismissible = recap = false;
 var ca = 'center';
 var tz = 0;
 
@@ -99,6 +98,22 @@ function removeBoxes(mutations) {
             li.parentNode.removeChild(li);
         }
     }
+
+    if(dismissible == true) {
+        var items = document.querySelectorAll('.DismissibleModule');
+        console.log('Removing dismissible', items.length);
+        for(var i = 0; i < items.length; i++) {
+            items[i].parentNode.removeChild[items[i]];
+        }
+    }
+
+    if(recap == true) {
+        var items = document.querySelectorAll('.has-recap');
+        console.log('Removing recap', items.length);
+        for(var i = 0; i < items.length; i++) {
+            items[i].parentNode.removeChild[items[i]];
+        }
+    }
 }
 
 function restoreOptions() {
@@ -113,7 +128,9 @@ function restoreOptions() {
         tz: 0,
         citu: false,
         remove_suggestions: false,
-        pt: false
+        pt: false,
+        dismissible: false,
+        recap: false
     }, function(items) {
         dl = items.dl;
         dr = items.dr;
@@ -126,6 +143,8 @@ function restoreOptions() {
         citu = items.citu;
         remove_suggestions = items.remove_suggestions;
         pt = items.pt;
+        dismissible = items.dismissible;
+        recap = items.recap;
     });
 }
 
