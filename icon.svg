@@ -15,9 +15,9 @@
    viewBox="0 0 33.866666 33.866668"
    version="1.1"
    id="svg8"
-   inkscape:export-filename="icon128disabled.png"
-   inkscape:export-xdpi="96"
-   inkscape:export-ydpi="96"
+   inkscape:export-filename="icon128.png"
+   inkscape:export-xdpi="96.000008"
+   inkscape:export-ydpi="96.000008"
    inkscape:version="0.92.1 r15371"
    sodipodi:docname="icon.svg">
   <defs
@@ -30,8 +30,8 @@
      inkscape:pageopacity="0"
      inkscape:pageshadow="2"
      inkscape:zoom="3.959798"
-     inkscape:cx="104.85593"
-     inkscape:cy="75.088258"
+     inkscape:cx="1.3152944"
+     inkscape:cy="73.067952"
      inkscape:document-units="mm"
      inkscape:current-layer="layer2"
      showgrid="false"
@@ -308,7 +308,7 @@
      inkscape:groupmode="layer"
      id="layer2"
      inkscape:label="Disabled"
-     style="opacity:0.97">
+     style="display:none;opacity:0.97000002">
     <circle
        style="fill:none;stroke:#ff0000;stroke-width:3.22256207;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
        id="path51"
@@ -316,7 +316,7 @@
        cy="16.96187"
        r="15.291564" />
     <rect
-       style="fill:#ff8080;stroke:#ff0000;stroke-width:3.06969595;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;fill-opacity:1"
+       style="fill:#ff8080;fill-opacity:1;stroke:#ff0000;stroke-width:3.06969595;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
        id="rect4528"
        width="0.60135639"
        height="29.065561"
